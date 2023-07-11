@@ -7,10 +7,14 @@ makeOrangeDancer.prototype = Object.create(dancer.prototype);
 makeOrangeDancer.prototype.constructor = makeOrangeDancer;
 var oldStep = dancer.prototype.step;
 
-makeOrangeDancer.prototype.step = function() {
+// makeOrangeDancer.prototype.step = function() {
+//   oldStep.call(this);
+//   this.$node.fadeIn();
+//   this.$node.fadeOut();
+// };
 
-  oldStep.call(this);
-
-  this.$node.fadeIn();
-  this.$node.fadeOut();
+makeOrangeDancer.prototype.lineUp = function() {
+  this.$node.animate({
+    top: 300
+  });
 };

@@ -11,3 +11,9 @@ var oldStep = dancer.prototype.step;
 makeJackBlackDancer.prototype.step = function() {
   oldStep.call(this);
 };
+
+makeJackBlackDancer.prototype.lineUp = function() {
+  this.$node.animate({
+    top: 500
+  });
+};

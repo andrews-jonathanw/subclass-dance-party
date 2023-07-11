@@ -11,3 +11,11 @@ makeBlinkyDancer.prototype.step = function() {
   oldStep.call(this);
   this.$node.toggle();
 };
+
+makeBlinkyDancer.prototype.lineUp = function() {
+  //alert('working');
+  this.$node.animate({
+    top: 100
+  });
+};
+

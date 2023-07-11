@@ -7,7 +7,7 @@ body{
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: rgb(246, 138, 210);
 }
 .title, .addDancerButton{
   padding:5px 12px;
@@ -26,7 +26,6 @@ body, a:link, a:visited, a:active{
   background-size: cover;
   width: auto;
   height: 100vh;
-  position: relative;
 }
 .dancer{
   border:10px solid red;
@@ -37,6 +36,20 @@ body, a:link, a:visited, a:active{
   border:20px solid orange;
   border-radius:0px;
   position:absolute;
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+
 }
 /*.testDancer{
   border:10px solid green;
@@ -55,5 +68,17 @@ body, a:link, a:visited, a:active{
   height: 100px;
 }
 
+button {
+  background-color: rgb(246, 138, 210);
+  font-weight: bold;
+  margin: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(95, 99, 105)
+}
 
+.addDancerButton {
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: 'red'
 
+}

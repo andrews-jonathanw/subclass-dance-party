@@ -29,6 +29,42 @@ dancer.prototype.setPosition = function(top, left) {
   this.$node.css(this.styleSettings);
 };
 
-// now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
-// this one sets the position to some random default point within the body
-//dancer.setPosition(top, left);
+// create partnerup prototype
+dancer.prototype.partnerUp = function() {
+  // create a myLoc var
+  var myLoc = {
+    top: this.top, // x
+    left: this.left // y
+  };
+  var minDist = Infinity;
+  var closestDancer = null;
+  // iterate over dancers in array
+  var dancers = window.dancers;
+  for (var i = 0; i < dancers.length; i++) {
+    // check if dancer location is closer than closestDancer
+    // create var to hold currentDancerLoc
+
+    var currentDancerLoc = {
+      top: dancers[i].top, // x
+      left: dancers[i].left // y
+    };
+    // skip over the invoking dancer
+    if (currentDancerLoc.top !== myLoc.top && currentDancerLoc.left !== myLoc.top) {
+      // create distance var
+      var distance = Math.sqrt((myLoc.top - currentDancerLoc.top) * (myLoc.top - currentDancerLoc.top) + (myLoc.left - currentDancerLoc.left) * (myLoc.left - currentDancerLoc.left));
+      // update closestDancer if true
+      if (minDist > distance) {
+        minDist = distance;
+        closestDancer = dancers[i];
+      }
+      this.$node.animate({
+        top: closestDancer.top,
+        left: closestDancer.left,
+      }, 1000);
+    }
+  }
+  //alert(myLoc.top + ' ' + myLoc.left + 'this is the closest: ' + closestDancer.top + ' ' + closestDancer.left);
+
+
+};
+

@@ -27,7 +27,41 @@ $(document).ready(function() {
       $('.floor').width() * Math.random(),
       Math.random() * 1000
     );
+    //push dancer
+    window.dancers.push(dancer);
     $('.floor').append(dancer.$node);
   });
+});
+
+
+// Button Event Listeners
+// Line Up
+
+$('.lineUpButton').on('click', function() {
+  // iterate through dancers array
+  for (var i = 0; i < window.dancers.length; i++) {
+    window.dancers[i].lineUp();
+  }
+});
+
+// Interact with one another
+$('.PartnerUpButton').on('click', function() {
+  // iterate through dancers array
+  for (var i = 0; i < window.dancers.length; i++) {
+    window.dancers[i].partnerUp();
+  }
+});
+
+// Interact with one another
+$('body').on('mouseenter', '.dancer', function() {
+  $(this).css('border-color', 'white');
+});
+
+$('body').on('mouseleave', '.dancer', function() {
+  $(this).css('border-color', '');
+});
+
+$('body').on('mouseenter', '.jack', function() {
+  alert('youre touching me');
 });
 
