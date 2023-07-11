@@ -20,20 +20,40 @@ body, a:link, a:visited, a:active{
 .title{
   background-color: #777;
 }
+.floor{
+  margin: 0px;
+  background-image: url(assets/12Z_2104.w018.n001.884B.p15.884.jpg);
+  background-size: cover;
+  width: auto;
+  height: 100vh;
+  position: relative;
+}
 .dancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
 }
 .blueDancer{
-  border:10px solid blue;
-  border-radius:10px;
+  border:20px solid orange;
+  border-radius:0px;
   position:absolute;
 }
-.testDancer{
+/*.testDancer{
   border:10px solid green;
   border-radius:1px;
   position:absolute;
+}*/
+.image{
+  width: 150px;
+  height: 150px;
+  border-width: 0px;
 }
+.jack{
+  border: 0;
+  border-radius: 0px;
+  width: 100px;
+  height: 100px;
+}
+
 
 

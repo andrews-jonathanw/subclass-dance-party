@@ -1,15 +1,16 @@
-var makeBlueDancer = function(top, left, timeBetweenSteps) {
+var makeOrangeDancer = function(top, left, timeBetweenSteps) {
   dancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('blueDancer');
 };
 
-makeBlueDancer.prototype = Object.create(dancer.prototype);
-makeBlueDancer.prototype.constructor = makeBlueDancer;
+makeOrangeDancer.prototype = Object.create(dancer.prototype);
+makeOrangeDancer.prototype.constructor = makeOrangeDancer;
 var oldStep = dancer.prototype.step;
 
-makeBlueDancer.prototype.step = function() {
+makeOrangeDancer.prototype.step = function() {
 
   oldStep.call(this);
 
-  this.$node.toggle();
+  this.$node.fadeIn();
+  this.$node.fadeOut();
 };
